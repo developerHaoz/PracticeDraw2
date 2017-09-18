@@ -35,7 +35,6 @@ public class Practice05ComposeShaderView extends View {
 
         Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(), R.drawable.batman);
         Bitmap bitmap2 = BitmapFactory.decodeResource(getResources(), R.drawable.batman_logo);
-
         BitmapShader bitmapShader1 = new BitmapShader(bitmap1, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
         BitmapShader bitmapShader2 = new BitmapShader(bitmap2, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
 
