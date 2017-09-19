@@ -13,6 +13,7 @@ public class Practice16TextPathView extends View {
     Paint pathPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     Path textPath = new Path();
     String text = "Hello HenCoder";
+    String textHaoz = "Hello HenCoder";
 
     public Practice16TextPathView(Context context) {
         super(context);
