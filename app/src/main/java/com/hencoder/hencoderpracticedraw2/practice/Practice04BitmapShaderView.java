@@ -38,7 +38,6 @@ public class Practice04BitmapShaderView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
         canvas.drawCircle(200, 200, 200, paint);
     }
 }

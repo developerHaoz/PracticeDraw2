@@ -2,8 +2,12 @@ package com.hencoder.hencoderpracticedraw2.practice;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.DashPathEffect;
+import android.graphics.DiscretePathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PathEffect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -11,6 +15,9 @@ import android.view.View;
 public class Practice12PathEffectView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     Path path = new Path();
+    PathEffect mCornerPathEffect = new CornerPathEffect(20);
+    PathEffect mDiscretePathEffect = new DiscretePathEffect(20, 5);
+    PathEffect mDashPathEffect = new DashPathEffect(new float[]{20, 10, 5, 10}, 0);
 
     public Practice12PathEffectView(Context context) {
         super(context);
@@ -42,16 +49,19 @@ public class Practice12PathEffectView extends View {
         // 使用 Paint.setPathEffect() 来设置不同的 PathEffect
 
         // 第一处：CornerPathEffect
+        paint.setPathEffect(mCornerPathEffect);
         canvas.drawPath(path, paint);
 
         canvas.save();
         canvas.translate(500, 0);
         // 第二处：DiscretePathEffect
+        paint.setPathEffect(mDiscretePathEffect);
         canvas.drawPath(path, paint);
         canvas.restore();
 
         canvas.save();
         canvas.translate(0, 200);
+        paint.setPathEffect(mDashPathEffect);
         // 第三处：DashPathEffect
         canvas.drawPath(path, paint);
         canvas.restore();
